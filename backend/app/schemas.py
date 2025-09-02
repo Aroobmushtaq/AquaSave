@@ -1,8 +1,6 @@
-
 from pydantic import BaseModel, EmailStr, Field
 from typing import List, Optional
 from datetime import datetime, date
-
 
 # --- Auth / Users ---
 class UserCreate(BaseModel):
@@ -32,15 +30,24 @@ class Token(BaseModel):
 
 # --- Usage ---
 class UsageCreate(BaseModel):
-    liters_used: int = Field(..., ge=0)
-    date: Optional[date] = None  # same as date | None, but more explicit
+    liters_used: int = Field(..., ge=0, alias="liters_used")  # accept snake_case
+    date: Optional[date] = None
+    category: str
+
+    class Config:
+        populate_by_name = True
 
 
 class UsagePublic(BaseModel):
     id: str
     user_id: str
-    liters_used: int
+    liters_used: int = Field(..., alias="liters_used")
     date: date
+    category: str
+
+    class Config:
+        populate_by_name = True
+
 
 
 class UsageSummary(BaseModel):

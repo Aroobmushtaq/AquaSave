@@ -11,9 +11,7 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Usage from "./pages/Usage";
-import Challenges from "./pages/Challenges";
 import Leaderboard from "./pages/Leaderboard";
-import Profile from "./pages/Profile";
 import LeakageSensor from "./pages/LeakageSensor";
 
 // Page wrapper for animation
@@ -45,9 +43,7 @@ export default function App() {
               <Route element={<ProtectedRoute />}>
                 <Route path="/dashboard" element={<Page><Dashboard /></Page>} />
                 <Route path="/usage" element={<Page><Usage /></Page>} />
-                <Route path="/challenges" element={<Page><Challenges /></Page>} />
                 <Route path="/leaderboard" element={<Page><Leaderboard /></Page>} />
-                <Route path="/profile" element={<Page><Profile /></Page>} />
                 <Route path="/sensor" element={<Page><LeakageSensor /></Page>} />
               </Route>
             </Routes>
