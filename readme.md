@@ -22,4 +22,4 @@ AquaSave is a full-stack web application designed to promote water conservation.
 
 -nMongoDB (database support)
 
-<!-- - CORS enabled API (frontend integration) -->
+- CORS enabled API (frontend integration)
